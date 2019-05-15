@@ -1,4 +1,4 @@
-package com.ming.service;
+package com.ming.service1;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

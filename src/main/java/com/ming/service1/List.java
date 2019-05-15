@@ -1,7 +1,6 @@
-package com.ming.service;
+package com.ming.service1;
 
 import com.github.pagehelper.ISelect;
-import com.github.pagehelper.PageHelper;
 import com.ming.dao.Result;
 import com.ming.dao.pojo.FanySing;
 import org.apache.ibatis.session.SqlSession;
@@ -13,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Objects;
 
 import static com.github.pagehelper.page.PageMethod.startPage;
 import static com.ming.dao.util.SqlSessionFactoryUtil.openSqlSesion;
@@ -43,10 +43,10 @@ public class List extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 获取page
-        if(req.getParameter("page") == null){
+        if(Objects.equals(req.getParameter("page").trim(), null)){
             this.page = 0;
         }else{
-            this.page = Integer.parseInt(req.getParameter("page"));
+            this.page = Integer.parseInt(req.getParameter("page").trim());
         }
 
         /*

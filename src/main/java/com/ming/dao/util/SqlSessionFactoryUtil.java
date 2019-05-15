@@ -28,6 +28,7 @@ public class SqlSessionFactoryUtil {
      * 日志管理类
      */
     private static final Logger logger = LogManager.getLogger();
+    private static final String RESOURCE = "dao/mybatis-config.xml";
     /**
      * 单例
      */
@@ -40,13 +41,11 @@ public class SqlSessionFactoryUtil {
      * 初始化SqlSessionFactory对象
      */
     public static SqlSessionFactory initSqlSessionFactory(){
-        // 配置文件
-        String resource = "dao/mybatis-config.xml";
         // 输出流
         InputStream inputStream = null;
         try{
             // 获得配置文件输入流
-            inputStream = Resources.getResourceAsStream(resource);
+            inputStream = Resources.getResourceAsStream(RESOURCE);
         }catch (IOException e){
             // 错误写入配置文件中
             logger.error(e);
