@@ -1,4 +1,4 @@
-package com.ming.service1;
+package com.ming.controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +11,6 @@ import java.io.IOException;
  * @author ming
  */
 public class Index extends HttpServlet {
-    private int page;
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

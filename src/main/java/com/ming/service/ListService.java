@@ -28,7 +28,7 @@ public class ListService {
     /**
      * 获取列表List
      * @param page 页数
-     * @return List<FanySing></> 列表List对象
+     * @return List<FanySing> | null </> 列表List对象
      */
     public List<FanySing> getList(int page){
         // 对page 处理
@@ -41,7 +41,6 @@ public class ListService {
             fanySingList = startPage(page, PAGESIZE).doSelectPage(() -> {
                 result.listSing();
             });
-
             return fanySingList;
         }catch (Exception e){
             logger.error(e);

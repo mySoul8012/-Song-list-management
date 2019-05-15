@@ -1,4 +1,4 @@
-package com.ming.service1;
+package com.ming.service;
 
 import com.github.pagehelper.ISelect;
 import com.ming.dao.Result;
@@ -21,25 +21,31 @@ import static com.ming.dao.util.SqlSessionFactoryUtil.openSqlSesion;
  * 歌曲列表servlet 进行分页操作
  * @author ming
  */
+@Deprecated
 public class List extends HttpServlet {
     /**
      * 分页变量
      */
+    @Deprecated
     private int page;
     /**
      * 分页大小
      */
+    @Deprecated
     private final static int PAGESIZE = 3;
     /**
      * 日志管理
      */
+    @Deprecated
     private final static Logger logger = LogManager.getLogger();
 
+    @Deprecated
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doGet(req, resp);
     }
 
+    @Deprecated
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // 获取page

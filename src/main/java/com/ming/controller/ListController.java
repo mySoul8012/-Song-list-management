@@ -34,7 +34,11 @@ public class ListController extends HttpServlet {
         ListService listService = new ListService();
         List<FanySing> fanySingList = listService.getList(page);
 
-        // 传入试图层
 
+        // 参数传入jsp页面
+        req.setAttribute("fanySingList", fanySingList);
+        req.setAttribute("page", page);
+        // 传入视图层
+        req.getRequestDispatcher("/WEB-INF/classes/view/list.jsp").forward(req, resp);
     }
 }
