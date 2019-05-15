@@ -7,7 +7,7 @@ import java.util.List;
  * 歌曲对象
  * @author ming
  */
-public class Fanysing {
+public class FanySing {
     private int id;
     private String name;
     private String singer;

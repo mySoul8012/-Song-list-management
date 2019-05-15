@@ -5,8 +5,9 @@
 
 
 ${page}
-
-
+<c:forEach items="${fanySingList}" var="fanySing" varStatus="vs">
+    ${fanySing.issudate}<br/>
+</c:forEach>
 
 <%-- 引入尾 --%>
 <c:import url="footer/footer.jsp"/>

@@ -2,7 +2,7 @@ package com.ming.dao;
 
 import com.github.pagehelper.ISelect;
 import com.github.pagehelper.PageHelper;
-import com.ming.dao.pojo.Fanysing;
+import com.ming.dao.pojo.FanySing;
 import com.ming.dao.pojo.Songlist;
 import com.ming.dao.pojo.Users;
 import org.apache.ibatis.session.SqlSession;
@@ -53,7 +53,7 @@ public class ResultTest {
 
     @Test
     public void findFanySing() {
-        Fanysing fanysing = result.findFanySing(3);
+        FanySing fanysing = result.findFanySing(3);
         List<Songlist> songlist = fanysing.getSonglist();
         sqlSession.commit();
         Iterator iterator = songlist.iterator();
@@ -66,15 +66,15 @@ public class ResultTest {
 
     @Test
     public void listSing(){
-        List<Fanysing> fanysings = PageHelper.startPage(0, 10).doSelectPage(new ISelect() {
+        List<FanySing> fanySings = PageHelper.startPage(0, 10).doSelectPage(new ISelect() {
             @Override
             public void doSelect() {
                 result.listSing();
             }
         });
-        Iterator iterator = fanysings.iterator();
+        Iterator iterator = fanySings.iterator();
         while(iterator.hasNext()){
-            Fanysing fanysing = (Fanysing)iterator.next();
+            FanySing fanysing = (FanySing)iterator.next();
             List<Songlist> songlists = fanysing.getSonglist();
             out.println(songlists.size());
             Iterator iterator1 = songlists.iterator();

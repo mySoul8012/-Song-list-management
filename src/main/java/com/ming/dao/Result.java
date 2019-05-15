@@ -1,6 +1,6 @@
 package com.ming.dao;
 
-import com.ming.dao.pojo.Fanysing;
+import com.ming.dao.pojo.FanySing;
 import com.ming.dao.pojo.Users;
 import com.ming.dao.pojo.Songlist;
 import org.apache.ibatis.annotations.Param;
@@ -31,12 +31,12 @@ public interface Result {
      * @param id
      * @return
      */
-    public Fanysing findFanySing(@Param("id") int id);
+    public FanySing findFanySing(@Param("id") int id);
 
     /**
      * 列出歌曲列表
      * @param
      * @return
      */
-    public List<Fanysing> listSing();
+    public List<FanySing> listSing();
 }

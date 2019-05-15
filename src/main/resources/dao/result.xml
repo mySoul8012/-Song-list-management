@@ -33,7 +33,7 @@
 	]]></select>
 	
 	<!-- 歌曲对象 根据id查找出歌曲 -->
-	<resultMap id="findFanySing" type="com.ming.dao.pojo.Fanysing">
+	<resultMap id="findFanySing" type="com.ming.dao.pojo.FanySing">
 		<id property="id" column="id"/>
 		<result property="category" column="category"/>
 		<result property="issudate" column="issudate"/>

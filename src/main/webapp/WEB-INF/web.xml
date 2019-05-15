@@ -20,7 +20,7 @@
   
   <servlet>
     <servlet-name>list</servlet-name>
-    <servlet-class>com.ming.service.list</servlet-class>
+    <servlet-class>com.ming.service.List</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>list</servlet-name>
