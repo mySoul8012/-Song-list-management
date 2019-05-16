@@ -1,7 +1,9 @@
 package com.ming.service;
 
+import com.github.pagehelper.PageInfo;
 import com.ming.dao.Result;
 import com.ming.dao.pojo.FanySing;
+import com.ming.dao.pojo.Users;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,6 +27,8 @@ public class ListService {
      */
     private final static Logger logger = LogManager.getLogger();
 
+    private int pages;
+
     /**
      * 获取列表List
      * @param page 页数
@@ -32,7 +36,7 @@ public class ListService {
      */
     public List<FanySing> getList(int page){
         // 对page 处理
-        page = page < 0 ? 0 : page;
+        page = page <= 0 ? 1 : page;
         final SqlSession sqlSession = openSqlSesion();
         java.util.List<FanySing> fanySingList= null;
         try {
@@ -41,10 +45,26 @@ public class ListService {
             fanySingList = startPage(page, PAGESIZE).doSelectPage(() -> {
                 result.listSing();
             });
+            pages = new PageInfo<>(fanySingList).getPages();
             return fanySingList;
         }catch (Exception e){
+            // 记录错误回滚
             logger.error(e);
+            sqlSession.rollback();
+        }finally {
+            // 对资源关闭
+            if(sqlSession != null){
+                sqlSession.close();
+            }
         }
         return null;
+    }
+
+    /**
+     * 获取到总页数
+     * @return
+     */
+    public int getPages(){
+        return this.pages;
     }
 }

@@ -84,4 +84,13 @@ public class ResultTest {
             }
         }
     }
+
+    @Test
+    public void changeFanySing() {
+        FanySing fanySing = new FanySing();
+        fanySing.setId(0);
+        fanySing.setCategory("333");
+        result.changeFanySing(fanySing);
+        sqlSession.commit();
+    }
 }

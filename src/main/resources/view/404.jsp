@@ -4,10 +4,7 @@
 <c:import url="header/header.jsp"/>
 
 
-<c:url value="/list.html" var="list">
-    <c:param name="page" value="1"/>
-</c:url>
-<a href="${list}">歌曲库列表</a>
+404
 
 
 

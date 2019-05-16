@@ -67,4 +67,11 @@
 		       `writer`
 		FROM `songlist`.`fanysing`
 	]]></select>
+	
+	
+	<update id="changeFanySing" parameterType="com.ming.dao.pojo.FanySing"><![CDATA[
+		UPDATE songlist.fanysing SET songlist.fanysing.writer = #{writer}, songlist.fanysing.singer = #{singer} , songlist.fanysing.category = #{category},
+		                             songlist.fanysing.name = #{name}, songlist.fanysing.language = #{language}, songlist.fanysing.issudate = #{issudate}
+		                             WHERE songlist.fanysing.id = #{id}
+	]]></update>
 </mapper>

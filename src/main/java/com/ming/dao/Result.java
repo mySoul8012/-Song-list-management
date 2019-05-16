@@ -39,4 +39,12 @@ public interface Result {
      * @return
      */
     public List<FanySing> listSing();
+
+
+    /**
+     * 修改歌曲信息
+     * @param fanySing
+     * @return
+     */
+    public boolean changeFanySing(FanySing fanySing);
 }

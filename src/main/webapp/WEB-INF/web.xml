@@ -26,4 +26,13 @@
     <servlet-name>list</servlet-name>
     <url-pattern>/list.html</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>change</servlet-name>
+    <servlet-class>com.ming.controller.change</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>change</servlet-name>
+    <url-pattern>/change.html</url-pattern>
+  </servlet-mapping>
 </web-app>
