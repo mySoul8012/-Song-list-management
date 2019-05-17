@@ -2,7 +2,14 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		"http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
+	
 	<properties resource="dao/mysql.properties"/>
+	
+	<settings>
+		<!-- 打印查询语句 -->
+		<setting name="logImpl" value="STDOUT_LOGGING" />
+	</settings>
 	
 	
 	<!-- 定义别名 -->
@@ -13,7 +20,7 @@
 	<typeHandlers>
 		<typeHandler handler="com.ming.dao.typeHandler.SexEnumTypeHandler" javaType="com.ming.dao.typeHandler.Sex"/>
 	</typeHandlers>
-	
+
 	<plugins>
 		<!-- com.github.pagehelper为PageHelper类所在包名 -->
 		<plugin interceptor="com.github.pagehelper.PageInterceptor">
@@ -32,10 +39,12 @@
 			</dataSource>
 		</environment>
 	</environments>
-	
+
 
 	<mappers>
 		<mapper resource="dao/result.xml"/>
 	</mappers>
+	
+
 	
 </configuration>

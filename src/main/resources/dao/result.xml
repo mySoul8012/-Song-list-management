@@ -69,9 +69,27 @@
 	]]></select>
 	
 	
+	<!-- 更新记录 -->
 	<update id="changeFanySing" parameterType="com.ming.dao.pojo.FanySing"><![CDATA[
 		UPDATE songlist.fanysing SET songlist.fanysing.writer = #{writer}, songlist.fanysing.singer = #{singer} , songlist.fanysing.category = #{category},
 		                             songlist.fanysing.name = #{name}, songlist.fanysing.language = #{language}, songlist.fanysing.issudate = #{issudate}
 		                             WHERE songlist.fanysing.id = #{id}
 	]]></update>
+	
+	
+	<!-- 插入新的一条歌曲 -->
+	<insert id="addFanySing" parameterType="com.ming.dao.pojo.Users">
+		<if test="users.songlist != null">
+			INSERT songlist.songlist(id, singId, name, description, creator) values
+			<foreach collection="users.songlist" item="songlist" separator =",">
+				(
+				 #{songlist.id},
+				 #{songlist.singId},
+				 #{songlist.name},
+				 #{songlist.description},
+				 #{songlist.creator}
+				 )
+			</foreach>
+		</if>
+	</insert>
 </mapper>

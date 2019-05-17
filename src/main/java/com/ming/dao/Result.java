@@ -47,4 +47,13 @@ public interface Result {
      * @return
      */
     public boolean changeFanySing(FanySing fanySing);
+
+
+    /**
+     * 用户添加歌曲
+     * @param
+     * @return
+     */
+    public boolean addFanySing(@Param("users")Users users);
+
 }

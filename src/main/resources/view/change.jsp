@@ -3,7 +3,7 @@
 <%-- 引入头 --%>
 <c:import url="header/header.jsp"/>
 
-<form>
+<form method="get" action="/update.html">
     <c:forEach var="items" items="${id}">
 
         <table class="table table-bordered">

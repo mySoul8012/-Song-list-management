@@ -5,13 +5,13 @@ import com.github.pagehelper.PageHelper;
 import com.ming.dao.pojo.FanySing;
 import com.ming.dao.pojo.Songlist;
 import com.ming.dao.pojo.Users;
+import com.ming.service.ListService;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 import static com.ming.dao.util.SqlSessionFactoryUtil.openSqlSesion;
 import static java.lang.System.out;
@@ -91,6 +91,23 @@ public class ResultTest {
         fanySing.setId(0);
         fanySing.setCategory("333");
         result.changeFanySing(fanySing);
+        sqlSession.commit();
+    }
+
+    @Test
+    public void addFanySing() {
+        Users users = result.findUsers(4);
+        List<Songlist> songlists = new ArrayList<>();
+        ListService listService = new ListService();
+        List<FanySing> fanySings = listService.getList(2);
+        Iterator iterator = fanySings.iterator();
+        while(iterator.hasNext()){
+            FanySing fanySing = (FanySing)iterator.next();
+            Songlist songlist = new Songlist(new Random().nextInt(300), fanySing.getId(), users.getId());
+            songlists.add(songlist);
+        }
+        users.setSonglist(songlists);
+        assert result.addFanySing(users);
         sqlSession.commit();
     }
 }

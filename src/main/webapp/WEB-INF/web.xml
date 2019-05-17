@@ -35,4 +35,13 @@
     <servlet-name>change</servlet-name>
     <url-pattern>/change.html</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>update</servlet-name>
+    <servlet-class>com.ming.controller.update</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>update</servlet-name>
+    <url-pattern>/update.html</url-pattern>
+  </servlet-mapping>
 </web-app>

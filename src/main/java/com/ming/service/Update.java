@@ -33,17 +33,17 @@ public class Update {
                 }
             }
             sqlSession.commit();
-            return true;
         }catch (Exception e){
             // 记录错误回滚
             logger.error(e);
             sqlSession.rollback();
+            return false;
         }finally {
             // 对资源关闭
             if(sqlSession != null){
                 sqlSession.close();
             }
+            return true;
         }
-        return false;
     }
 }
