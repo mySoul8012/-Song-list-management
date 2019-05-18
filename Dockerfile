@@ -3,7 +3,7 @@ RUN apt update
 RUN apt install git -y
 RUN apt install maven -y
 WORKDIR /usr/local/tomcat/
-RUN git clone git@github.com:mySoul8012/-Song-list-management.git
+RUN git clone https://github.com/mySoul8012/-Song-list-management.git
 WORKDIR /usr/local/tomcat/LoginJava/
 RUN mvn install
 RUN mvn test
