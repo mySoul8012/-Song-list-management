@@ -7,6 +7,6 @@ RUN git clone https://github.com/mySoul8012/-Song-list-management.git
 WORKDIR /usr/local/tomcat/-Song-list-management/
 RUN mvn install
 RUN mvn test
-RUN cp ./target/mingmingwww.war  /usr/local/tomcat/webapps/
+RUN cp ./target/222.war  /usr/local/tomcat/webapps/
 WORKDIR /usr/local/tomcat/
 CMD ["catalina.sh", "run"]
