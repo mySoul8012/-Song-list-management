@@ -4,7 +4,7 @@
 <c:import url="header/header.jsp"/>
 
 <div class="container">
-    <form action="/change.html" method="get">
+    <form action="${pageContext.request.contextPath}/change.html" method="get">
         <table style="width: 500px;" class="table table-striped table-hover table-bordered">
             <thead>
                 <tr>
@@ -33,7 +33,7 @@
                             <td>${fanySing.writer}</td>
                             <td>${fanySing.language}</td>
                             <td>${fanySing.issudate}</td>
-                            <td><a href="/AddSongSongList.html?id=${fanySing.id}&userId=1">添加到我的收藏</a></td>
+                            <td><a href="${pageContext.request.contextPath}/AddSongSongList.html?id=${fanySing.id}&userId=1">添加到我的收藏</a></td>
                         </label>
                     </tr>
                 </c:forEach>

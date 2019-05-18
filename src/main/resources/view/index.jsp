@@ -4,7 +4,7 @@
 <c:import url="header/header.jsp"/>
 
 
-<c:url value="/list.html" var="list">
+<c:url value="list.html" var="list">
     <c:param name="page" value="1"/>
 </c:url>
 <a href="${list}">歌曲库列表</a>
@@ -14,7 +14,7 @@
 <br/>
 
 查看我的收藏的歌曲
-<a href="/ListSongListList.html?createId=1">查看我的收藏的歌曲</a>
+<a href="ListSongListList.html?createId=1">查看我的收藏的歌曲</a>
 
 
 <%-- 引入尾 --%>
