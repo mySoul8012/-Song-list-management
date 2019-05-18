@@ -16,6 +16,7 @@
                     <th>做词</th>
                     <th>语言</th>
                     <th>发行日期</th>
+                    <th>添加到我的收藏</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +33,7 @@
                             <td>${fanySing.writer}</td>
                             <td>${fanySing.language}</td>
                             <td>${fanySing.issudate}</td>
+                            <td><a href="/AddSongSongList.html?id=${fanySing.id}&userId=1">添加到我的收藏</a></td>
                         </label>
                     </tr>
                 </c:forEach>

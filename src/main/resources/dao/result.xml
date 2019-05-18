@@ -92,4 +92,11 @@
 			</foreach>
 		</if>
 	</insert>
+	
+	
+	<select id="findCreateIdSongList" resultMap="findSongList">
+		SELECT `id`, singId, `name`, `description`, `creator`
+		FROM `songlist`.`songlist`
+		WHERE `creator` = #{creator};
+	</select>
 </mapper>

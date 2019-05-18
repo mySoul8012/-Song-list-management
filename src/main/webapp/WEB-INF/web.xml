@@ -44,4 +44,22 @@
     <servlet-name>update</servlet-name>
     <url-pattern>/update.html</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AddSongSongList</servlet-name>
+    <servlet-class>com.ming.controller.AddSongSongList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddSongSongList</servlet-name>
+    <url-pattern>/AddSongSongList.html</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ListSongListList</servlet-name>
+    <servlet-class>com.ming.controller.ListSongList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListSongListList</servlet-name>
+    <url-pattern>/ListSongListList.html</url-pattern>
+  </servlet-mapping>
 </web-app>

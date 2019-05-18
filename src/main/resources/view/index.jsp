@@ -8,7 +8,13 @@
     <c:param name="page" value="1"/>
 </c:url>
 <a href="${list}">歌曲库列表</a>
+<br/>
+默认以用户id为1的用户身份添加歌曲到歌单 每次添加默认默认更新用户id为1的表单
 
+<br/>
+
+查看我的收藏的歌曲
+<a href="/ListSongListList.html?createId=1">查看我的收藏的歌曲</a>
 
 
 <%-- 引入尾 --%>

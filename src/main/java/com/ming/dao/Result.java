@@ -56,4 +56,11 @@ public interface Result {
      */
     public boolean addFanySing(@Param("users")Users users);
 
+
+    /**
+     * 根据创建者id查找出歌单项对象
+     * @param
+     * @return
+     */
+    public List<Songlist> findCreateIdSongList(@Param("creator")int creator);
 }
