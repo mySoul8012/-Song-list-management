@@ -4,14 +4,16 @@
 <c:import url="header/header.jsp"/>
 
 
-<a href="list.html">歌曲库列表</a>
-<br/>
-默认以用户id为1的用户身份添加歌曲到歌单 每次添加默认默认更新用户id为1的表单
 
-<br/>
-
-查看我的收藏的歌曲
-<a href="ListSongListList.html?createId=1">查看我的收藏的歌曲</a>
+<div class="container">
+    <div class="jumbotron">
+        <h1>欢迎进入首页！</h1>
+        <p>这是一个首页</p>
+        <p><a href="ListSongListList.html?createId=1" class="btn btn-primary btn-lg" role="button">
+            查看我已经收藏的歌单</a>
+        </p>
+    </div>
+</div>
 
 
 <%-- 引入尾 --%>

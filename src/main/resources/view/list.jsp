@@ -39,31 +39,32 @@
                 </c:forEach>
             </tbody>
         </table>
-        <input type="submit" value="修改">
+        <input type="submit" value="修改" class="btn btn-default">
     </form>
 </div>
 
-<!-- 上下一页 -->
-<!-- 上一页 -->
-<c:url value="list.html" var="PreviousPage">
-    <c:param name="page" value="${page - 1}"/>
-</c:url>
-<c:if test="${page > 1}">
-    <a href="${PreviousPage}">
-        <button type="button" class="btn btn-default">上一页</button>
-    </a>
-</c:if>
+<div class="container">
+    <!-- 上下一页 -->
+    <!-- 上一页 -->
+    <c:url value="list.html" var="PreviousPage">
+        <c:param name="page" value="${page - 1}"/>
+    </c:url>
+    <c:if test="${page > 1}">
+        <a href="${PreviousPage}">
+            <button type="button" class="btn btn-default">上一页</button>
+        </a>
+    </c:if>
 
-<!-- 下一页 -->
-<c:url value="list.html" var="NextPage">
-    <c:param name="page" value="${page + 1}"/>
-</c:url>
-<c:if test="${page < pages}">
-    <a href="${NextPage}">
-        <button type="button" class="btn btn-default">下一页</button>
-    </a>
-</c:if>
+    <!-- 下一页 -->
+    <c:url value="list.html" var="NextPage">
+        <c:param name="page" value="${page + 1}"/>
+    </c:url>
+    <c:if test="${page < pages}">
+        <a href="${NextPage}">
+            <button type="button" class="btn btn-default">下一页</button>
+        </a>
+    </c:if>
 
-
+</div>
 <%-- 引入尾 --%>
 <c:import url="footer/footer.jsp"/>

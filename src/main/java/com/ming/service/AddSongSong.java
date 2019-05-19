@@ -1,6 +1,7 @@
 package com.ming.service;
 
 import com.ming.dao.Result;
+import com.ming.dao.pojo.FanySing;
 import com.ming.dao.pojo.Songlist;
 import com.ming.dao.pojo.Users;
 import org.apache.ibatis.session.SqlSession;
@@ -29,6 +30,11 @@ public class AddSongSong {
             final Result result = sqlSession.getMapper(Result.class);
             Users users = result.findUsers(userId);
             Songlist songlist = new Songlist(new Random().nextInt(2334), id, userId);
+            // 取得歌曲对象
+            FanySing fanySing = result.findFanySing(id);
+            // 进行赋值操作
+            songlist.setName(fanySing.getName());
+            songlist.setDescription(fanySing.getSinger());
             users.getSonglist().add(songlist);
             if(result.addFanySing(users)){
                 flag = true;

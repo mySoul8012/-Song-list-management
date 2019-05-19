@@ -21,7 +21,7 @@
         </table>
 
     </c:forEach>
-    <input type="submit" value="提交"/>
+    <input type="submit" value="提交" class="btn btn-default"/>
 </form>
 
 
