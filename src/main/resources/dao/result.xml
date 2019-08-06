@@ -15,8 +15,8 @@
 	</resultMap>
 	<select id="findSongList" parameterType="int" resultMap="findSongList" ><![CDATA[
 		SELECT `id`, singId, `name`, `description`, `creator`
-		FROM `songlist`.`songlist`
-		WHERE `id` = #{id};
+		FROM `Songlist`
+		WHERE `id` = #{id}
 	]]></select>
 	
 	<!--用户 根据id给出用户对象-->
@@ -28,8 +28,8 @@
 	</resultMap>
 	<select id="findUsers" parameterType="int" resultMap="getUsers"><![CDATA[
 		SELECT `id`, `sex`, address
-		FROM `songlist`.`users`
-		WHERE `id` = #{id};
+		FROM `Users`
+		WHERE `id` = #{id}
 	]]></select>
 	
 	<!-- 歌曲对象 根据id查找出歌曲 -->
@@ -51,8 +51,8 @@
 		       `name`,
 		       `singer`,
 		       `writer`
-		FROM `songlist`.`fanysing`
-		WHERE `songlist`.`fanysing`.`id` = #{id};
+		FROM `FanySing`
+		WHERE `id` = #{id}
 		]]></select>
 	
 	
@@ -65,22 +65,22 @@
 		       `name`,
 		       `singer`,
 		       `writer`
-		FROM `songlist`.`fanysing`
+		FROM `FanySing`
 	]]></select>
 	
 	
 	<!-- 更新记录 -->
 	<update id="changeFanySing" parameterType="com.ming.dao.pojo.FanySing"><![CDATA[
-		UPDATE songlist.fanysing SET songlist.fanysing.writer = #{writer}, songlist.fanysing.singer = #{singer} , songlist.fanysing.category = #{category},
-		                             songlist.fanysing.name = #{name}, songlist.fanysing.language = #{language}, songlist.fanysing.issudate = #{issudate}
-		                             WHERE songlist.fanysing.id = #{id}
+		UPDATE FanySing SET writer = #{writer}, singer = #{singer} , category = #{category},
+		                             name = #{name}, language = #{language}, issudate = #{issudate}
+		                             WHERE id = #{id}
 	]]></update>
 	
 	
 	<!-- 插入新的一条歌曲 -->
 	<insert id="addFanySing" parameterType="com.ming.dao.pojo.Users">
 		<if test="users.songlist != null">
-			INSERT songlist.songlist(id, singId, name, description, creator) values
+			INSERT Songlist(id, singId, name, description, creator) values
 			<foreach collection="users.songlist" item="songlist" separator =",">
 				(
 				 #{songlist.id},
@@ -96,7 +96,7 @@
 	
 	<select id="findCreateIdSongList" resultMap="findSongList">
 		SELECT `id`, singId, `name`, `description`, `creator`
-		FROM `songlist`.`songlist`
+		FROM .`Songlist`
 		WHERE `creator` = #{creator};
 	</select>
 </mapper>
